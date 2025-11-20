@@ -2,14 +2,9 @@ name: Docker Build and Push
 
 on:
   push:
-    branches:
-      - trunk
-  workflow_dispatch:
-    inputs:
-      tag:
-        description: "Docker image tag"
-        required: true
-        default: "latest"
+    branches: [ trunk ]
+    tags:
+      - 'v*'
 
 jobs:
   build-and-push:
